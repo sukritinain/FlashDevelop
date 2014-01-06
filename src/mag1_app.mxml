@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600" pageTitle="Magnetic Appliances"
+			   minWidth.Image1="1000" minHeight.Image1="800" backgroundColor.Image1="#AFABB3"
+			   backgroundColor.Image2="#AFABB3"
+			   backgroundColor.Image3="#AFABB3"
+			   backgroundColor.Image4="#AFABB3"
+			   backgroundColor.Image5="#AFABB3">
+	
+	<fx:Script>
+			
+		<![CDATA[
+			/* Next_btn: Event Handler to change to state 2*/
+			protected function btn1_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "Image2";
+			}
+			
+			/* Next_btn: Event Handler to change to state 3*/
+			protected function btn1_clickHandlertoimage3(event:MouseEvent):void
+			{
+				this.currentState = "Image3";
+			}
+			
+			/* Next_btn: Event Handler to change to state 4*/
+			protected function btn1_clickHandlertoimage4(event:MouseEvent):void
+			{
+				this.currentState = "Image4";
+			}
+			
+			/* Next_btn: Event Handler to change to state 5*/
+			protected function btn1_clickHandlertoimage5(event:MouseEvent):void
+			{
+				this.currentState = "Image5";
+			}
+			
+			/* Next_btn: Event Handler to End the application*/
+			protected function btn1_clickHandlerend(event:MouseEvent):void
+			{
+				import mx.controls.Alert;
+				Alert.show("Happy Learning","Note");
+			}
+			
+			/* Previous_btn: Event Handler to go back to state 1*/
+			protected function btn2_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "Image1"
+			}
+			
+			/* Previous_btn: Event Handler to go back to state 2*/
+			protected function btn2_clickHandlerimage2(event:MouseEvent):void
+			{
+				this.currentState = "Image2"
+			}
+			
+			/* Previous_btn: Event Handler to go back to state 3*/
+			protected function btn4_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "Image3"
+			}
+			
+			/* Previous_btn: Event Handler to go back to state 4*/
+			protected function btn5_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "Image4"
+			}
+			
+		]]>
+	</fx:Script>
+	<!--- States Declaration-->
+	
+	<s:states>
+		<s:State name="Image1"/>
+		<s:State name="Image2"/>
+		<s:State name="Image3"/>
+		<s:State name="Image4"/>
+		<s:State name="Image5"/>
+	</s:states>
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:layout.Image5>
+		<s:BasicLayout/>
+	</s:layout.Image5>
+	<s:layout.Image1>
+		<s:BasicLayout/>
+	</s:layout.Image1>
+	
+	<!---Next Button in all the states -->
+	
+	<s:Button id="btn1" x="639" y="511" label="Next" click="btn1_clickHandler(event)"
+			  click.Image1="btn1_clickHandler(event)"
+			  x.Image2="639" y.Image2="511" click.Image2="btn1_clickHandlertoimage3(event)"
+			  x.Image3="639" y.Image3="511" click.Image3="btn1_clickHandlertoimage4(event)"
+			  x.Image4="639" y.Image4="511" click.Image4="btn1_clickHandlertoimage5(event)"
+			  x.Image5="639" y.Image5="511" label.Image5="End" click.Image5="btn1_clickHandlerend(event)"/>
+	
+	<!--- Compass image -->
+	<s:Image includeIn="Image1" x="20" y="63" width="590" height="495" source="assets/compass.gif"/>
+	
+	<!---Refrigerator Image -->
+	<s:Image includeIn="Image2" x="122" y="-102" width="454" height="712" source="assets/Fridge .png"/>
+	
+	<!---Train Image -->
+	<s:Image includeIn="Image3" x="46" y="52" width="557" height="362" source="assets/train.jpg"/>
+	
+	<!---Computer Image -->
+	<s:Image includeIn="Image4" x="80" y="44" width="513" height="437" source="assets/Computer.png"/>  
+	
+	<!---Speakers Image -->
+	<s:Image includeIn="Image5" x="22" y="7" width="582" height="419" source="assets/Speakers.png"/>
+	
+	<!---Heading -->
+	<s:Label includeIn="Image1" x="20" y="10" width="905" height="45" color="#1149EA"
+			 fontFamily="Courier New" fontSize="29" fontStyle="normal" fontWeight="bold"
+			 lineThrough="false" text="Practical Appliances which use Magnetism" textAlign="center"
+			 verticalAlign="middle"/>
+	
+	<!--- Previous_btn in State 2-->
+	<s:Button id="btn2" includeIn="Image2" x="763" y="511" label="Previous"
+			  click="btn2_clickHandler(event)"/>
+	
+	<!--- Previous_btn in State 3-->
+	<s:Button id="btn3" includeIn="Image3" x="763" y="511" label="Previous"
+			  click="btn2_clickHandlerimage2(event)"/>
+	
+	<!--- Previous_btn in State 4-->
+	<s:Button id="btn4" includeIn="Image4" x="775" y="511" label="Previous"
+			  click="btn4_clickHandler(event)"/>
+	
+	<!--- Previous_btn in State 5-->
+	<s:Button id="btn5" includeIn="Image5" x="760" y="511" label="Previous"
+			  click="btn5_clickHandler(event)"/>
+	
+	
+	
+	
+	<!--- Text about Magnetic Compass -->
+	<s:TextArea includeIn="Image1" x="625" y="92" width="365" height="204" fontFamily="Arial"
+				fontSize="18" fontWeight="normal" textAlign="left" verticalAlign="top">
+		<s:text>A MAGNETIC COMPASS consists of a small, lightweight MAGNET balanced on a nearly frictionless CENTRAL POINT. 
+			    The magnet is generally called a needle. One end of the needle is often marked "N," for north, or coloured
+			    (RED in this image) in some way to indicate that it points toward north. On the surface, that's all there 
+		        is to a compass.</s:text>
+	</s:TextArea>
+	
+	<!--- Text about Refrigerator -->
+	<s:TextArea includeIn="Image2" x="615" y="113" width="330" height="169" fontSize="18"
+				textAlign="left">
+		<s:text>REFRIGERATOR uses a magnetic strip in its door. 
+			All refrigerators must seal to lock out the warm air and keep cool air inside.
+			A magnet is what allows these seals to be so effective.
+			The magnetic strip runs the length and width of the refrigerator and freezer door.
+		</s:text>
+	</s:TextArea>
+	
+	<!--- Text about Maglev Trains -->
+	<s:TextArea includeIn="Image3" x="637" y="141" width="320" height="229" fontSize="18"
+				textAlign="left">
+		
+		<s:text>MAGLEV (derived from magnetic levitation) is a system of transportation that 
+			uses magnetic levitation to suspend, guide and propel vehicles with magnets rather than 
+			using methods such as wheels, axles and bearings. With maglev, a vehicle is levitated a
+			short distance away from a guideway using magnets to create both lift and thrust.
+		</s:text>
+	</s:TextArea>
+	
+	
+	<!--- Text about Computers -->
+	<s:TextArea includeIn="Image4" x="639" y="138" width="344" height="227" fontSize="18"
+				textAlign="left" verticalAlign="top">
+		
+		<s:text>COMPUTERS use magnets in several ways. First, CRT computer screens are produced
+			like television screens. The electromagnets bend the stream of electrons making it visible 
+			on a large screen. Also, omputer disks are coated with metal that stores and transmits 
+			electromagnetic signals in patterns. This is how the information is stored on a computer disk.
+		</s:text>
+	</s:TextArea>
+	
+	
+	
+	
+
+	
+	
+	
+	<!--- Magnetic Compass Label -->
+	<s:Label includeIn="Image1" x="194" y="580" width="211" height="29" fontFamily="Courier New"
+			 fontSize="19" fontStyle="italic" fontWeight="normal" text="Magnetic Compass"
+			 textAlign="center" verticalAlign="middle"/>
+	
+	<!--- Fridge Label -->
+	<s:Label includeIn="Image2" x="252" y="547" width="194" height="33" fontFamily="Courier New"
+			 fontSize="20" fontStyle="italic" text="Fridge" textAlign="center"
+			 verticalAlign="middle"/>
+	
+	<!--- Computer Label -->
+	<s:Label includeIn="Image4" x="295" y="511" width="99" height="26" fontFamily="Courier New"
+			 fontSize="19" fontStyle="italic" text="Computer" textAlign="center"
+			 verticalAlign="middle"/>
+	
+	<!--- Maglev Trains Label -->
+	<s:Label includeIn="Image3" x="190" y="507" width="184" height="29" fontFamily="Courier New"
+			 fontSize="18" fontStyle="italic" text="Maglev Trains" textAlign="center"
+			 verticalAlign="middle"/>
+	
+	<!--- Speakers Label -->
+	<s:Label includeIn="Image5" x="158" y="434" width="255" height="34" fontFamily="Courier New"
+			 fontSize="18" fontStyle="italic" text="Speakers " textAlign="center"
+			 verticalAlign="middle"/>
+	
+	<!---Text about Speakers -->
+	<s:TextArea includeIn="Image5" x="612" y="83" width="312" height="146" fontSize="18"
+				text="There are actually two magnets in a common audio SPEAKER.
+				There is one permanent magnet attached to the framework of the speaker, 
+				and one electromagnet attached to the cone of the speaker."
+				textAlign="left" verticalAlign="top"/>
+	
+</s:Application>
