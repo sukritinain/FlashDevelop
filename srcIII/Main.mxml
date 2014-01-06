@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   minWidth="955" minHeight="600" pageTitle="Magnetic poles of common Magnets"
+			   backgroundColor.State1="#AFABB3"
+			   backgroundColor.State2="#AFABB3"
+			   backgroundColor.State3="#AFABB3"
+			   backgroundColor.State4="#AFABB3">
+	
+	<s:states>
+		<s:State name="State1"/>
+		<s:State name="State2"/>
+		<s:State name="State3"/>
+		<s:State name="State4"/>
+	</s:states>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<fx:Script>
+		
+		<![CDATA[
+			import flash.display.Sprite;			
+			
+			//bar magnet click event handler//
+			protected function bar_mag_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State2";
+				
+			}
+			
+			//circular magnet click event handler//
+			protected function button_mag_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State3";
+			}
+			
+			//ball ended magnet click event handler//
+			protected function horseshoe_mag_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State4";
+			}
+			
+			
+			//back button of state2//
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State1";
+			}
+			
+			//back button of state3//
+			protected function button2_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State1";
+			}
+			
+			//back button of state4//
+			protected function button3_clickHandler(event:MouseEvent):void
+			{
+				this.currentState="State1";
+			}
+			
+			//end button in first state1//
+			protected function button4_clickHandler(event:MouseEvent):void
+			{
+				import mx.controls.Alert;
+				Alert.show("Happy Learning","Note");
+			}
+			
+		]]>
+	</fx:Script>
+	<!---bar magnet image -->
+	<s:Image id="bar_mag" includeIn="State1" x="35" y="36" width="261" height="148"
+			 click="bar_mag_clickHandler(event)" source="assets/Bar_magnet(1).png"/>
+	
+	<!---bar magnet image -->
+	<s:Image id="button_mag" includeIn="State1" x="34" y="136" width="276" height="225"
+			 click="button_mag_clickHandler(event)"
+			 source="assets/button magnets.png"/>
+	
+	<!---horseshoe magnet image -->
+	<s:Image id="horseshoe_mag" includeIn="State1" x="34" y="364" width="343" height="205"
+			 click="horseshoe_mag_clickHandler(event)" source="assets/Untitled(1).png"/>
+	
+	<!---table image -->
+	<s:Image id="table" includeIn="State1" x="440" y="115" width="505" height="353"
+			 source="assets/Craft-Table-Gris-orage.png"/>
+	
+	<!---screws image-->
+	<s:Image id="screw1" includeIn="State1" x="644" y="131" width="102" height="92"
+			 source="assets/screws4 copy 2.png"/>
+	<s:Image id="screw2" includeIn="State1" x="621" y="128" width="87" height="76"
+			 source="assets/screws4 copy 2.png"/>
+	<s:Image id="screw3" includeIn="State1" x="609" y="126" width="74" height="100"
+			 source="assets/screws4 copy 2.png"/>
+	<s:Image id="screw4" includeIn="State1" x="609" y="126" width="80" height="70"
+			 source="assets/screws4 copy 2.png"/>
+	<s:Image id="screw5" includeIn="State1" x="678" y="115" width="82" height="81"
+			 source="assets/screws4 copy 2.png"/>
+	
+	<!---state2 images-->
+	<s:Image includeIn="State2" x="16" y="26" width="916" height="569"
+			 source="assets/236\PIC00007.png"/>
+	<s:Image includeIn="State2" x="56" y="236" width="446" height="253" source="assets/Untitled.png"/>
+	
+	<!---state3 image-->
+	<s:Image includeIn="State3" x="23" y="63" width="894" height="398"
+			 source="assets/Galvanized Roofing Nail Sticks to Magnet.jpg"/>
+	
+	<!---magnet image-->
+	<s:Image includeIn="State4" x="78" y="68" width="616" height="341"
+			 source="assets/magnet.jpg"/>
+	
+	
+	<!---four buttons, 1 end and 3 back -->
+	<s:Button includeIn="State2" x="211" y="546" width="126" height="34" label="Back"
+			  click="button1_clickHandler(event)"/>
+	<s:Button includeIn="State3" x="283" y="514" width="140" height="40" label="Back"
+			  click="button2_clickHandler(event)"/>
+	<s:Button includeIn="State4" x="304" y="504" width="141" height="42" label="Back"
+			  click="button3_clickHandler(event)"/>
+	<s:Button includeIn="State1" x="875" y="548" label="End" click="button4_clickHandler(event)"/>
+	
+	<!---Heading-->
+	<s:Label includeIn="State1" x="164" y="14" width="570" height="31" color="#0D28EF"
+			 fontFamily="Courier New" fontSize="29" fontWeight="bold"
+			 text="Magnetic Poles of common Magnet" textAlign="center" verticalAlign="middle"/>
+	
+	<!---Instruction to click on each image -->
+	<s:Label includeIn="State1" x="429" y="505" width="387" height="64" fontFamily="Courier New"
+			 fontSize="20" fontStyle="italic" fontWeight="normal"
+			 text="Click on each image to see where the pins will be attracted" textAlign="center"
+			 textDecoration="none" verticalAlign="middle"/>
+	
+</s:Application>
