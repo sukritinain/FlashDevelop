@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   backgroundColor="#AFABB3" pageTitle="Magnetic and Non Magnetic materials"
+			   minWidth.State1="2000" minHeight.State1="600"
+			   minWidth.State2="2000" minHeight.State2="600"
+			   minWidth.State3="2000" minHeight.State3="600"
+			   minWidth.State4="2000" minHeight.State4="600"
+			   minWidth.State5="2000" minHeight.State5="600"
+			   minWidth.State6="2000" minHeight.State6="600">
+	
+	<fx:Script>
+		
+		<![CDATA[
+			import mx.controls.Alert;
+			
+			//next button event handlers//
+			protected function btn1_clickHandler(event:MouseEvent):void
+			{	
+				this.currentState = "State2";
+			}
+			
+			protected function btn1_clickHandlertostate3(event:MouseEvent):void
+			{
+				this.currentState = "State3";			
+			}
+			
+			protected function btn1_clickHandlertostate4(event:MouseEvent):void
+			{
+				this.currentState = "State4";			
+			}
+			
+			protected function btn1_clickHandlertostate5(event:MouseEvent):void
+			{
+				this.currentState = "State5";			
+			}
+			
+			protected function btn1_clickHandlertostate6(event:MouseEvent):void
+			{
+				this.currentState = "State6";
+			}
+			
+			protected function btn2_clickHandler(event:MouseEvent):void
+			{
+					Alert.show("Happy Learning","End");	
+			}
+			
+            //previous button event handlers//
+			protected function btn3_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "State1";		
+			}
+			
+			protected function btn4_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "State2";
+			}
+			
+			protected function btn5_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "State3";
+			}
+			
+			protected function btn6_clickHandler(event:MouseEvent):void
+			{
+				this.currentState = "State4";
+			}
+			
+			//image event handlers//
+			protected function img2_clickHandler_shoes(event:MouseEvent):void
+			{
+				Alert.show("Magnets are not attracted to Leather.");
+			}
+			
+			protected function img2_clickHandler_foil(event:MouseEvent):void
+			{
+				Alert.show("Magnets are not attracted to Aluminium.");
+			}
+			
+			protected function img2_clickHandler_cup(event:MouseEvent):void
+			{
+				Alert.show("Magnets are not attracted to Plastic.");
+			}
+			
+			protected function img2_clickHandler_watch(event:MouseEvent):void
+			{
+				
+				img1.x+=600;
+				img1.y-=1;
+				img1.width-=227;
+				img1.height-=115;
+				Alert.show("Magnets are attracted to Steel.");
+				}
+			
+			protected function img2_clickHandler_ball(event:MouseEvent):void
+			{
+				img1.x+=600;
+				img1.y-=1;
+				img1.width-=227;
+				img1.height-=115;
+				Alert.show("Magnets are attracted to Iron.");
+			}
+			
+			//yes and no radiobuttons event handlers//
+			protected function radiobutton1_clickHandler(event:MouseEvent):void
+			{
+				wrong_image.y=119;
+				wrong_image.visible=wrong_image.includeInLayout=true;
+				right_image.visible=right_image.includeInLayout=false;
+			}
+			
+			protected function radiobutton2_clickHandler(event:MouseEvent):void
+			{
+				right_image.y=119;
+				wrong_image.visible=wrong_image.includeInLayout=false;
+				right_image.visible=right_image.includeInLayout=true;
+				
+			}			
+			
+			protected function radiobutton3_clickHandler(event:MouseEvent):void
+			{
+				wrong_image.y=150;
+				wrong_image.visible=wrong_image.includeInLayout=true;
+				right_image.visible=right_image.includeInLayout=false;
+			}
+			
+			protected function radiobutton4_clickHandler(event:MouseEvent):void
+			{
+				right_image.y=150;
+				wrong_image.visible=wrong_image.includeInLayout=false;
+				right_image.visible=right_image.includeInLayout=true;				
+			}
+			
+			protected function radiobutton5_clickHandler(event:MouseEvent):void
+			{
+				right_image.y=180;
+				wrong_image.visible=wrong_image.includeInLayout=false;
+				right_image.visible=right_image.includeInLayout=true;				
+			}
+			
+			protected function radiobutton6_clickHandler(event:MouseEvent):void
+			{
+				wrong_image.y=180;
+				wrong_image.visible=wrong_image.includeInLayout=true;
+				right_image.visible=right_image.includeInLayout=false;				
+			}
+				
+			
+			protected function radiobutton7_clickHandler(event:MouseEvent):void
+			{
+				wrong_image.y=210;
+				wrong_image.visible=wrong_image.includeInLayout=true;
+				right_image.visible=right_image.includeInLayout=false;
+				
+			}
+			
+			protected function radiobutton8_clickHandler(event:MouseEvent):void
+			{
+				right_image.y=210;
+				wrong_image.visible=wrong_image.includeInLayout=false;
+				right_image.visible=right_image.includeInLayout=true;	
+			}
+			
+			protected function radiobutton9_clickHandler(event:MouseEvent):void
+			{
+				right_image.y=240;
+				wrong_image.visible=wrong_image.includeInLayout=false;
+				right_image.visible=right_image.includeInLayout=true;
+			}
+			
+			protected function radiobutton10_clickHandler(event:MouseEvent):void
+			{
+				wrong_image.y=240;
+				wrong_image.visible=wrong_image.includeInLayout=true;
+				right_image.visible=right_image.includeInLayout=false;	
+			}
+			
+			//code to reset all radiobuttons//
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				yes_toys.selected=false;
+				yes_shirt.selected=false;
+				yes_ironrod.selected=false;
+				yes_door.selected=false;
+				yes_coins.selected=false;
+				no_toys.selected=false;
+				no_shirt.selected=false;
+				no_ironrod.selected=false;
+				no_door.selected=false;
+				no_coins.selected=false;
+				wrong_image.visible=false;
+				right_image.visible=false;
+			}
+			
+		]]>
+	</fx:Script>
+    <!---six states in the application -->
+	
+	<s:states>
+		<s:State name="State1"/>
+		<s:State name="State2"/>
+		<s:State name="State3"/>
+		<s:State name="State4"/>
+		<s:State name="State5"/>
+		<s:State name="State6"/>
+	</s:states>
+	
+	<!---yes and no radiobutton group declaration-->
+	<fx:Declarations>
+		<s:RadioButtonGroup id="radiogroup1"/>
+		<s:RadioButtonGroup id="radiogroup2"/>
+		<s:RadioButtonGroup id="radiogroup3"/>
+		<s:RadioButtonGroup id="radiogroup4"/>
+		<s:RadioButtonGroup id="radiogroup5"/>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:layout.State1>
+		<s:BasicLayout/>
+	</s:layout.State1>
+	
+	         <!---code for images -->
+	<s:Image id="img1" includeIn="State1,State2,State3,State4,State5" x="10" y="10" width="344"
+			 height="173" source="assets/full.jpg"
+			 
+			 x.State1="10" y.State1="105" width.State1="369" height.State1="211" depth.State1="100"
+			 source.State1="assets/full.png"
+			 
+			 x.State2="10" y.State2="34" width.State2="369" height.State2="211" 
+			 depth.State2="100" source.State2="assets/aluminium_foil_big.gif"
+			 
+			 x.State3="10" y.State3="34" width.State3="369" height.State3="211" 
+			 depth.State3="100" scaleMode.State3="letterbox"
+			 source.State3="assets/paper-cup.png"
+			 
+			 x.State4="10" y.State4="34" width.State4="369" height.State4="211" depth.State4="100"
+			 scaleMode.State4="zoom"
+			 source.State4="assets/kinetic-watch.png"
+			 
+			 x.State5="10" y.State5="34" width.State5="369" height.State5="211"
+			 depth.State5="100" source.State5="assets/165251790_86c2d72121.png"/>
+	
+	         <!---code for magnet image -->
+	<s:Image id="img2" includeIn="State1,State2,State3,State4,State5" x="684" y="18" width="132"
+			 height="86" source="assets/Untitled.png"
+			 x.State1="649" y.State1="110" width.State1="132" height.State1="86"
+			 click.State1="img2_clickHandler_shoes(event)" depth.State1="100"
+			 
+			 x.State2="684" y.State2="18" width.State2="132" height.State2="86"
+			 click.State2="img2_clickHandler_foil(event)" depth.State2="100"
+			 
+			 x.State3="684" y.State3="18" width.State3="132" height.State3="86"
+			 click.State3="img2_clickHandler_cup(event)" depth.State3="100"
+			 
+			 x.State4="684" y.State4="18" width.State4="132" height.State4="86"
+			 click.State4="img2_clickHandler_watch(event)" depth.State4="100"
+			 
+			 x.State5="684" y.State5="18" width.State5="132" height.State5="86"
+			 click.State5="img2_clickHandler_ball(event)" depth.State5="100"/>
+	
+	
+	         <!---label for images -->
+	<s:Label includeIn="State1,State2,State3,State4,State5" x="53" y="195" width="267" height="26"
+			 fontFamily="Courier New" fontSize="16" fontStyle="normal" fontWeight="normal"
+			 text="are made from Leather" textAlign="center" verticalAlign="middle"
+			 
+			 x.State1="45" y.State1="335"
+			 
+			 x.State2="42" y.State2="271" text.State2="is made up of aluminium"
+			 
+			 x.State3="42" y.State3="271" text.State3="is made up of Plastic"
+			 
+			 x.State4="42" y.State4="271" width.State4="334"
+			 text.State4="is made up of Stainless Steel"
+			 
+			 x.State5="42" y.State5="271" text.State5="are made up of Iron"/>
+	          
+	          <!---code for next button -->
+	<s:Button id="btn1" includeIn="State1,State2,State3,State4,State5" x="595" y="521" label="Next"
+			  x.State1="929" y.State1="528" click.State1="btn1_clickHandler(event)"		  
+			  x.State2="929" y.State2="528" click.State2="btn1_clickHandlertostate3(event)"
+			  x.State3="929" y.State3="528" click.State3="btn1_clickHandlertostate4(event)"
+			  x.State4="929" y.State4="528" click.State4="btn1_clickHandlertostate5(event)"
+			  x.State5="929" y.State5="528" click.State5="btn1_clickHandlertostate6(event)"/>
+	
+	<!---code for table image -->
+	<s:Image id="img3" includeIn="State1,State2,State3,State4,State5" x="466" y="10" width="485"
+			 height="344" source="assets/Craft-Table-Gris-orage.jpg"
+			 
+			 x.State1="465" y.State1="100" width.State1="485" height.State1="344" depth.State1="50"
+			 source.State1="assets/Craft-Table-Gris-orage.png"
+			 
+			 x.State2="466" y.State2="10" width.State2="485" height.State2="344" depth.State2="50" source.State2="assets/Craft-Table-Gris-orage.png"
+			 x.State3="466" y.State3="10" width.State3="485" height.State3="344" depth.State3="50" source.State3="assets/Craft-Table-Gris-orage.png"
+			 x.State4="466" y.State4="10" width.State4="485" height.State4="344" depth.State4="50" source.State4="assets/Craft-Table-Gris-orage.png"
+			 x.State5="466" y.State5="10" width.State5="485" height.State5="344" depth.State5="50" source.State5="assets/Craft-Table-Gris-orage.png"/>
+	
+	<!---code for previous button -->
+	<s:Button id="btn2" includeIn="State6" x="814" y="528" label="End"
+			  click="btn2_clickHandler(event)"/>
+	<s:Button id="btn3" includeIn="State2" x="814" y="528" label="Previous"
+			  click="btn3_clickHandler(event)"/>
+	<s:Button id="btn4" includeIn="State3" x="814" y="528" label="Previous"
+			  click="btn4_clickHandler(event)"/>
+	<s:Button id="btn5" includeIn="State4" x="814" y="528" label="Previous"
+			  click="btn5_clickHandler(event)"/>
+	<s:Button id="btn6" includeIn="State5" x="814" y="528" label="Previous"
+			  click="btn6_clickHandler(event)"/>
+	<s:Image includeIn="State6" x="6" y="-9" width="849" height="529"
+			 source="assets/Slide1.png"/>
+	
+	<!---wrong image -->
+	<s:Image id="wrong_image" includeIn="State6" visible="false" x="867" y="119" width="36"
+			 height="30" backgroundAlpha="0.0" source="assets/Red_Cross.png"/>
+	
+	<!---right Image -->
+	<s:Image id="right_image" includeIn="State6" visible="false" x="842" y="119" width="28"
+			 height="30" backgroundAlpha="0.02" backgroundColor="#FFFFFF" source="assets/tick.png"/>
+	
+	<!---radio buttons for toys -->
+	<s:HGroup includeIn="State6" x="670" y="128" width="175" height="30" gap="60">
+		<s:RadioButton id="yes_toys" label="Yes" click="radiobutton1_clickHandler(event)"
+					   fontSize="12" groupName="radiogroup1"/>
+		<s:RadioButton id="no_toys" label="No" click="radiobutton2_clickHandler(event)" fontSize="12"
+					   groupName="radiogroup1"/>
+	</s:HGroup>
+	
+	<!---radio buttons for shirt  -->
+	<s:HGroup includeIn="State6" x="670" y="157" width="175" height="25" gap="60">
+		<s:RadioButton id="yes_shirt" label="Yes" click="radiobutton3_clickHandler(event)"
+					   groupName="radiogroup2"/>
+		<s:RadioButton id="no_shirt" label="No" click="radiobutton4_clickHandler(event)"
+					   groupName="radiogroup2"/>
+	</s:HGroup>
+	
+	<!---radio buttons for iron rod -->
+	<s:HGroup includeIn="State6" x="670" y="190" width="175" height="21" gap="60">
+		<s:RadioButton id="yes_ironrod" label="Yes" click="radiobutton5_clickHandler(event)"
+					   groupName="radiogroup3"/>
+		<s:RadioButton id="no_ironrod" label="No" click="radiobutton6_clickHandler(event)"
+					   groupName="radiogroup3"/>
+	</s:HGroup>
+	
+	<!---radio buttons for door-->
+	<s:HGroup includeIn="State6" x="670" y="219" width="185" height="22" gap="60">
+		<s:RadioButton id="yes_door" label="Yes" click="radiobutton7_clickHandler(event)"
+					   groupName="radiogroup4"/>
+		<s:RadioButton id="no_door" label="No" click="radiobutton8_clickHandler(event)"
+					   groupName="radiogroup4"/>
+	</s:HGroup>
+	
+	<!---radio buttons for coins -->
+	<s:HGroup includeIn="State6" x="670" y="249" width="200" height="30" gap="60">
+		<s:RadioButton id="yes_coins" label="Yes" click="radiobutton9_clickHandler(event)"
+					   groupName="radiogroup5"/>
+		<s:RadioButton id="no_coins" label="No" click="radiobutton10_clickHandler(event)"
+					   groupName="radiogroup5"/>
+	</s:HGroup>
+	<!---label for yes and no question -->
+	<s:Label includeIn="State6" x="666" y="88" width="189" height="41" fontSize="13"
+			 text="Are the following attracted by Magnet" textAlign="center" verticalAlign="middle"/>
+	<!---reset button -->
+	<s:Button includeIn="State6" x="710" y="528" label="Reset" click="button1_clickHandler(event)"/>
+	<s:Label includeIn="State1" x="54" y="25" width="896" height="33" color="#3915EE"
+			 fontFamily="Courier New" fontSize="29" fontWeight="bold"
+			 text="Magnetic and Non Magnetic Materials" textAlign="center" verticalAlign="middle"/>
+	
+</s:Application>
